@@ -84,7 +84,9 @@
 						</goals>
 						<configuration>
 							<inputSpec>
-								http://127.0.0.1:8080/jens
+<!--								http://127.0.0.1:8080/v3/api-docs-->
+<!--								${project.basedir}/src/main/resources/working.json-->
+								${project.basedir}/src/main/resources/notWorking.json
 							</inputSpec>
 							<generatorName>java</generatorName>
 							<configOptions>

@@ -3,7 +3,7 @@ package nl.straube.spring.restService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.santander.sal.dbox.dto.RsvXO;
+import nl.zoo.dto.RsvXO;
 
 @RestController
 public class RestService {

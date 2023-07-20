@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package de.santander.sal.dbox.dto;
+package nl.zoo.dto;
 
 import java.io.Serializable;
 
@@ -24,8 +24,8 @@ import lombok.Data;
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "petType", visible = true)
 @JsonSubTypes({
-		@JsonSubTypes.Type(value = Cat.class, name = "pussyCat"),
-		@JsonSubTypes.Type(value = Dog.class, name = "plutoDog"), })
+		@JsonSubTypes.Type(value = Cat.class, name = "Cat"),
+		@JsonSubTypes.Type(value = Dog.class, name = "Dog"), })
 @Data
 public abstract class Pet implements Serializable {
 	private static final long serialVersionUID = 1L;

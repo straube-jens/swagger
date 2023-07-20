@@ -10,21 +10,17 @@
  * Do not edit the class manually.
  */
 
-package de.santander.sal.dbox.dto;
+package nl.zoo.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import lombok.Data;
 
-/**
- * RsvXO
- */
 @Data
-public class RsvXO implements Serializable {
+@JsonTypeName("Dog")
+public class Dog extends Pet implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private String name;
-	private Pet pet;
-	private Date aenderDatum;
-
+	private String preferredPostman;
 }

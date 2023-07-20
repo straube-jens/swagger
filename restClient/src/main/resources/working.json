@@ -1,0 +1,108 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "OpenAPI definition",
+		"version": "v0"
+	},
+	"servers": [
+		{
+			"url": "http://127.0.0.1:8080",
+			"description": "Generated server url"
+		}
+	],
+	"paths": {
+		"/vehicleDecision": {
+			"post": {
+				"tags": [
+					"rest-service"
+				],
+				"operationId": "createRiskDecission",
+				"parameters": [
+					{
+						"name": "rsvXO",
+						"in": "query",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/RsvXO"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/RsvXO"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Cat": {
+				"type": "object",
+				"properties": {
+					"preferredGardenToPeeIn": {
+						"type": "string"
+					}
+				}
+			},
+			"Dog": {
+				"type": "object",
+				"properties": {
+					"preferredPostman": {
+						"type": "string"
+					}
+				}
+			},
+			"Pet": {
+				"oneOf": [
+					{
+						"$ref": "#/components/schemas/Cat"
+					},
+					{
+						"$ref": "#/components/schemas/Dog"
+					}
+				],
+				"required": [
+					"petType"
+				],
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"petType": {
+						"type": "string"
+					}
+				},
+				"discriminator": {
+					"propertyName": "petType"
+				}
+			},
+			"RsvXO": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"pet": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/Pet"
+						}
+					},
+					"aenderDatum": {
+						"type": "string",
+						"format": "date-time"
+					}
+				}
+			}
+		}
+	}
+}
