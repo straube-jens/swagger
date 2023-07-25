@@ -45,7 +45,15 @@
 	"components": {
 		"schemas": {
 			"Cat": {
+				"required": [
+					"petType"
+				],
 				"type": "object",
+				"allOf": [
+					{
+						"$ref": "#/components/schemas/Pet"
+					}
+				],
 				"properties": {
 					"preferredGardenToPeeIn": {
 						"type": "string"
@@ -53,7 +61,15 @@
 				}
 			},
 			"Dog": {
+				"required": [
+					"petType"
+				],
 				"type": "object",
+				"allOf": [
+					{
+						"$ref": "#/components/schemas/Pet"
+					}
+				],
 				"properties": {
 					"preferredPostman": {
 						"type": "string"
